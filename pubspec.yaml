@@ -25,6 +25,6 @@ flutter:
     platforms:
       android:
         package: com.yandex.appmetrica
-        pluginClass: AppMetricaPlugin
+        pluginClass: AppMetrica
       ios:
         pluginClass: YMMFAppMetricaPlugin
