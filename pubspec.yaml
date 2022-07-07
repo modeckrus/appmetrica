@@ -1,6 +1,6 @@
 name: appmetrica
 description: A Flutter plugin for AppMetrica by Yandex.
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/modeckrus/appmetrica
 
 environment:
