@@ -1,4 +1,4 @@
-package com.yandex.appmetrica_example
+package com.yandex.example
 
 import io.flutter.embedding.android.FlutterActivity
 

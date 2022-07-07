@@ -14,8 +14,8 @@ import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 
-/** AppMetricaPlugin */
-class AppMetricaPlugin: FlutterPlugin, ActivityAware {
+/** AppMetrica*/
+class AppMetrica: FlutterPlugin, ActivityAware {
 
     private lateinit var implementation: AppMetricaImplementation
 

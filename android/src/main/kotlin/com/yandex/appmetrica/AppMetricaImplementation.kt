@@ -119,33 +119,61 @@ class AppMetricaImplementation(private val context: Context): Pigeon.AppMetricaP
 
     override fun requestDeferredDeeplinkParameters(result: Pigeon.Result<Pigeon.AppMetricaDeferredDeeplinkParametersPigeon>) {
         YandexMetrica.requestDeferredDeeplinkParameters(object: DeferredDeeplinkParametersListener {
-
-            override fun onParametersLoaded(params: MutableMap<String, String>?) {
+            override fun onParametersLoaded(p0: MutableMap<String, String>) {
                 mainHandler.post {
                     result.success(Pigeon.AppMetricaDeferredDeeplinkParametersPigeon().apply {
-                        this.parameters = params?.toMap()
+                        this.parameters = p0.toMap()
                     })
                 }
             }
 
-            override fun onError(error: DeferredDeeplinkParametersListener.Error, messageArg: String?) {
+            override fun onError(p0: DeferredDeeplinkParametersListener.Error, p1: String) {
                 mainHandler.post {
                     result.success(Pigeon.AppMetricaDeferredDeeplinkParametersPigeon().apply {
                         this.parameters = null
                         this.error = Pigeon.AppMetricaDeferredDeeplinkErrorPigeon().apply {
-                            reason = when (error) {
-                                DeferredDeeplinkParametersListener.Error.NOT_A_FIRST_LAUNCH -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.NOT_A_FIRST_LAUNCH
-                                DeferredDeeplinkParametersListener.Error.PARSE_ERROR -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.PARSE_ERROR
-                                DeferredDeeplinkParametersListener.Error.UNKNOWN -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.UNKNOWN
-                                DeferredDeeplinkParametersListener.Error.NO_REFERRER -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.NO_REFERRER
-                            }
-                            message = messageArg
+//                            reason = when (error) {
+//                                DeferredDeeplinkParametersListener.Error.NOT_A_FIRST_LAUNCH -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.NOT_A_FIRST_LAUNCH
+//                                DeferredDeeplinkParametersListener.Error.PARSE_ERROR -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.PARSE_ERROR
+//                                DeferredDeeplinkParametersListener.Error.UNKNOWN -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.UNKNOWN
+//                                DeferredDeeplinkParametersListener.Error.NO_REFERRER -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.NO_REFERRER
+//                            }
+//                            message = messageArg
                             description = error.description
                         }
                     })
                 }
             }
-        })
+
+        });
+//        YandexMetrica.requestDeferredDeeplinkParameters(object: DeferredDeeplinkParametersListener {
+//
+//            override fun onParametersLoaded(params: MutableMap<String, String>?) {
+//                mainHandler.post {
+//                    result.success(Pigeon.AppMetricaDeferredDeeplinkParametersPigeon().apply {
+//                        this.parameters = params?.toMap()
+//                    })
+//                }
+//            }
+//
+//            override fun onError(error: DeferredDeeplinkParametersListener.Error, messageArg: String?) {
+//                mainHandler.post {
+//                    result.success(Pigeon.AppMetricaDeferredDeeplinkParametersPigeon().apply {
+//                        this.parameters = null
+//                        this.error = Pigeon.AppMetricaDeferredDeeplinkErrorPigeon().apply {
+//                            reason = when (error) {
+//                                DeferredDeeplinkParametersListener.Error.NOT_A_FIRST_LAUNCH -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.NOT_A_FIRST_LAUNCH
+//                                DeferredDeeplinkParametersListener.Error.PARSE_ERROR -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.PARSE_ERROR
+//                                DeferredDeeplinkParametersListener.Error.UNKNOWN -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.UNKNOWN
+//                                DeferredDeeplinkParametersListener.Error.NO_REFERRER -> Pigeon.AppMetricaDeferredDeeplinkReasonPigeon.NO_REFERRER
+//                            }
+//                            message = messageArg
+//                            description = error.description
+//                        }
+//                    })
+//                }
+//            }
+//        })
     }
 
     override fun requestAppMetricaDeviceID(result: Pigeon.Result<Pigeon.AppMetricaDeviceIdPigeon>) {
