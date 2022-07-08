@@ -12,7 +12,7 @@
 #import "YMMFReporterImplementation.h"
 #import "YMMFAppMetricaConfigConverterImplementation.h"
 
-@implementation YMMFAppMetricaPlugin
+@implementation YMMFAppMetrica
 
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar
 {

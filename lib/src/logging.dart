@@ -8,6 +8,6 @@
 
 import 'package:logging/logging.dart';
 
-const appMetricaRootLoggerName = "AppMetricaPlugin";
+const appMetricaRootLoggerName = "AppMetrica";
 
 final appMetricaRootLogger = Logger(appMetricaRootLoggerName);

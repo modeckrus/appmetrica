@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'PROPRIETARY', :file => '../LICENSE' }
   s.authors          = { "Yandex LLC" => "appmetrica@yandex-team.com" }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*', 'AppMetricaPlugin/*.{h,m}'
-  s.public_header_files = 'Classes/**/*.h', 'AppMetricaPlugin/*.h'
+  s.source_files = 'Classes/**/*', 'AppMetrica/*.{h,m}'
+  s.public_header_files = 'Classes/**/*.h', 'AppMetrica/*.h'
   s.dependency 'Flutter'
   s.dependency 'YandexMobileMetrica', '~> 4.2'
   s.static_framework = true

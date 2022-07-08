@@ -8,5 +8,5 @@
 
 #import <Flutter/Flutter.h>
 
-@interface YMMFAppMetricaPlugin : NSObject<FlutterPlugin>
+@interface YMMFAppMetrica : NSObject<FlutterPlugin>
 @end
